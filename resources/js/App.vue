@@ -1,6 +1,7 @@
 <script>
 
 import Authentication from './Authentication.vue'
+import TaskList from './TaskList.vue'
 
 export default {
     data() {
@@ -13,7 +14,7 @@ export default {
             this.initialized = true;
         });
     },
-    components: { Authentication }
+    components: { Authentication, TaskList }
 }
 </script>
 
@@ -21,7 +22,7 @@ export default {
     <h1>To Do App</h1>
     <div v-if="initialized">
         <Authentication>
-            <div>Authenticated, showing TODOs</div>
+            <TaskList />
         </Authentication>
     </div>
     <div v-else>Loading...</div>
