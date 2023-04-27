@@ -27,7 +27,7 @@ async function addTask($event) {
                 "    
     >Add Task</h2>
     <form @submit="addTask">
-        <input v-model="task.name" class="bg-indigo-300 rounded-full w-full mb-2" />
+        <input v-model="task.name" class="bg-indigo-100 rounded-full w-full mb-2 px-2" />
         <button type="submit" class="bg-fuchsia-400 text-white rounded-md px-2"
             style="
             text-shadow: 2px 4px 4px purple;
