@@ -11,7 +11,7 @@ export const useTaskStore = defineStore("task", {
     }),
     getters: {},
     actions: {
-        async updateTasks() {
+        async getTasks() {
             try {
                 const { data } = await tasks.get("/");
                 this.tasks = data;
@@ -22,7 +22,21 @@ export const useTaskStore = defineStore("task", {
         async addTask(task) {
             try {
                 await tasks.post("/", task);
-                this.updateTasks();
+                this.getTasks();
+            } catch (e) {
+                console.error(e);
+            }
+        },
+        async doneTask(id) {
+            await this.updateTask({ id, done: true });
+        },
+        async undoneTask(id) {
+            await this.updateTask({ id, done: false });
+        },
+        async updateTask(task) {
+            try {
+                await tasks.put(`/${task.id}`, task);
+                this.getTasks();
             } catch (e) {
                 console.error(e);
             }
