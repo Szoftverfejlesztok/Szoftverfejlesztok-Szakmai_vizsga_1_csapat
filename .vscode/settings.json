@@ -2,5 +2,7 @@
     "tailwindCSS.includeLanguages": {
         "vue": "html",
         "vue-html": "html"
-    }
+    },
+    "editor.formatOnSave": true,
+    "editor.formatOnPaste": true
 }
