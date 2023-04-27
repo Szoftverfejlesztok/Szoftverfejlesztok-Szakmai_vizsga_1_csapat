@@ -1,7 +1,6 @@
 <script>
-
-import Authentication from './Authentication.vue'
-import TaskList from './TaskList.vue'
+import Authentication from "./Authentication.vue";
+import TaskList from "./TaskList.vue";
 
 export default {
     data() {
@@ -14,8 +13,8 @@ export default {
             this.initialized = true;
         });
     },
-    components: { Authentication, TaskList }
-}
+    components: { Authentication, TaskList },
+};
 </script>
 
 <template>
