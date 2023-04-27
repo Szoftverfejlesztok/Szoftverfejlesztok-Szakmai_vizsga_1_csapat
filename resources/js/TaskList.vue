@@ -1,24 +1,16 @@
-<script>
-export default {
-    data() {
-        return {
-            tasks: null,
-        };
-    },
-    async mounted() {
-        try {
-            const { data } = await axios.get("/api/tasks");
-            this.tasks = data;
-        } catch (e) {
-            console.error(e);
-        }
-    },
-};
+<script setup>
+import { onMounted } from "vue";
+import { useTaskStore } from "./stores/tasks";
+
+const store = useTaskStore();
+onMounted(() => {
+    store.updateTasks();
+});
 </script>
 
 <template>
     <h2>Task List</h2>
-    <div v-for="task in tasks">
+    <div v-for="task in store.tasks">
         <div>{{ task.name }}</div>
     </div>
 </template>
