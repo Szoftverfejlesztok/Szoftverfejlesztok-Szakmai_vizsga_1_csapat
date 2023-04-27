@@ -11,7 +11,7 @@
 
 ## How to setup the environment?
 
--   Create a speratae user and database for the app (eg. database name: todo-app, username: todo-app)
+-   Create a separate user and database for the app (eg. database name: todo-app, username: todo-app)
 -   Create a .env file based on the .env.local with your MySQL server's connection data
 -   Install Composer dependencies: `composer install`
 -   Install NodeJS dependencies: `npm install`
