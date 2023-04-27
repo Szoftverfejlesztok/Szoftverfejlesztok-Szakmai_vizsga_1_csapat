@@ -61,27 +61,29 @@ async function onSubmit($event) {
         >
             Login
         </button>
-        <div
-        style="
-                font-family: 'Courier New';
-                font-size: 2vw;
-                color: lightcoral;
-                font-weight: bold;
-                text-shadow: 2px 4px 4px black;
+        
+        <button
+            class="rounded-full bg-fuchsia-400 px-10 float-right"
+            style="
+            font-family: 'Courier New';
+            font-size: 2vw;
+            color: mediumspringgreen;
+            font-weight: bold;
+            text-shadow: 2px 4px 4px black;
             "
-         v-if="state.failed">Failed to log in</div>
-            <button
-                class="rounded-full bg-fuchsia-400 px-10 float-right"
-                style="
-                font-family: 'Courier New';
-                font-size: 2vw;
-                color: mediumspringgreen;
-                font-weight: bold;
-                text-shadow: 2px 4px 4px black;
-            "
-                type="submit"
+            type="submit"
             >
                 <router-link to="/register">Register</router-link>
             </button>
+        <div
+            style="
+                font-family: 'Courier New';
+                font-size: 3vw;
+                color: crimson;
+                font-weight: bold;
+                text-shadow: 2px 4px 4px black;
+            "
+                v-if="state.failed">Failed to log in
+        </div>
     </form>
 </template>
