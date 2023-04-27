@@ -1,9 +1,11 @@
 // @ts-check
 const { test, expect } = require("@playwright/test");
 
-test("can log in", async ({ page }) => {
+test.beforeEach(async ({ page }) => {
     await page.goto("/");
+});
 
+test("can log in", async ({ page }) => {
     await page.getByLabel("Email").fill("test@example.com");
     await page.getByLabel("Password").fill("password");
 
@@ -13,8 +15,6 @@ test("can log in", async ({ page }) => {
 });
 
 test("can not log in with wrong email", async ({ page }) => {
-    await page.goto("/");
-
     await page.getByLabel("Email").fill("testwrong@example.com");
     await page.getByLabel("Password").fill("password");
 
@@ -24,8 +24,6 @@ test("can not log in with wrong email", async ({ page }) => {
 });
 
 test("can not log in with wrong password", async ({ page }) => {
-    await page.goto("/");
-
     await page.getByLabel("Email").fill("test@example.com");
     await page.getByLabel("Password").fill("wrongpassword");
 
