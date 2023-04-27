@@ -20,7 +20,9 @@ async function addTask($event) {
     <h2>Add Task</h2>
     <form @submit="addTask">
         <input v-model="task.name" />
-        <button type="submit">Add</button>
+        <button type="submit" class="bg-slate-600 text-white rounded-md px-2">
+            Add
+        </button>
     </form>
 </template>
 
