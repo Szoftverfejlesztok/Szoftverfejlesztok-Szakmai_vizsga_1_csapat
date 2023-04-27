@@ -52,5 +52,3 @@ async function login($event) {
         <div v-if="state.failed">Failed to log in</div>
     </form>
 </template>
-
-<style scoped></style>

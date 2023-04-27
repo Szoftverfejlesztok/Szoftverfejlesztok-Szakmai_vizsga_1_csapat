@@ -15,5 +15,3 @@ onMounted(() => {
         <Task :task="task" />
     </div>
 </template>
-
-<style scoped></style>

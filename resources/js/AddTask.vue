@@ -25,5 +25,3 @@ async function addTask($event) {
         </button>
     </form>
 </template>
-
-<style scoped></style>

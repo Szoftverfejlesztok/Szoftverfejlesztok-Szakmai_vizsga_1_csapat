@@ -21,5 +21,3 @@ onMounted(() => {
         <Login v-else />
     </div>
 </template>
-
-<style scoped></style>

@@ -28,5 +28,3 @@ async function onCheck($event) {
         {{ task.name }}
     </label>
 </template>
-
-<style scoped></style>
