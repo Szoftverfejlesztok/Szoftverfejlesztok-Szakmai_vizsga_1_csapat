@@ -2,8 +2,8 @@
 export default {
     data() {
         return {
-            tasks: null
-        }
+            tasks: null,
+        };
     },
     async mounted() {
         try {
@@ -13,11 +13,11 @@ export default {
             console.error(e);
         }
     },
-}
+};
 </script>
 
 <template>
-    <div>Task List</div>
+    <h2>Task List</h2>
     <div v-for="task in tasks">
         <div>{{ task.name }}</div>
     </div>
