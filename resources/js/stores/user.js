@@ -47,5 +47,14 @@ export const useUserStore = defineStore("user", {
             await axios.post("/login", { email, password });
             await this.checkUser();
         },
+        async register(name, email, password, password_confirmation) {
+            await axios.post("/register", {
+                name,
+                email,
+                password,
+                password_confirmation,
+            });
+            await this.checkUser();
+        },
     },
 });
