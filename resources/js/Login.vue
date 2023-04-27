@@ -27,8 +27,8 @@ async function onSubmit($event) {
     <form @submit="onSubmit">
         <div
             style="
-                font-family: 'Courier New';
-                font-size: 4vw;
+                font-family: 'Verdana';
+                font-size: 2vw;
                 color: lightsalmon;
                 font-weight: bold;
                 text-shadow: 2px 4px 4px black;
@@ -49,10 +49,10 @@ async function onSubmit($event) {
             />
         </div>
         <button
-            class="rounded-full bg-fuchsia-800 px-10"
+            class="rounded-full bg-fuchsia-400 px-10"
             style="
                 font-family: 'Courier New';
-                font-size: 4vw;
+                font-size: 2vw;
                 color: mediumspringgreen;
                 font-weight: bold;
                 text-shadow: 2px 4px 4px black;
@@ -64,12 +64,24 @@ async function onSubmit($event) {
         <div
         style="
                 font-family: 'Courier New';
-                font-size: 4vw;
+                font-size: 2vw;
                 color: mediumspringgreen;
                 font-weight: bold;
                 text-shadow: 2px 4px 4px black;
             "
          v-if="state.failed">Failed to log in</div>
-        <router-link to="/register">Register</router-link>
+            <button
+                class="rounded-full bg-fuchsia-400 px-10 float-right"
+                style="
+                font-family: 'Courier New';
+                font-size: 2vw;
+                color: mediumspringgreen;
+                font-weight: bold;
+                text-shadow: 2px 4px 4px black;
+            "
+                type="submit"
+            >
+                <router-link to="/register">Register</router-link>
+            </button>
     </form>
 </template>

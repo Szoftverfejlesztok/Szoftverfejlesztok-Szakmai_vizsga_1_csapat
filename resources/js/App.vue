@@ -15,7 +15,7 @@ onMounted(() => {
             <h1
                 style="
                     font-family: 'Courier New';
-                    font-size: 3vw;
+                    font-size: 2vw;
                     color: goldenrod;
                     font-weight: bold;
                     text-shadow: 2px 4px 4px black;
@@ -29,7 +29,7 @@ onMounted(() => {
             <div
                 style="
                     font-family: 'Courier New';
-                    font-size: 3vw;
+                    font-size: 2vw;
                     color: yellowgreen;
                     font-weight: bold;
                     text-shadow: 2px 4px 4px black;
