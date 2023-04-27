@@ -7,7 +7,11 @@ export const useUserStore = defineStore("user", {
         loading: true,
         user: null,
     }),
-    getters: {},
+    getters: {
+        isAuthenticated() {
+            return this.user !== null;
+        },
+    },
     actions: {
         async initialize() {
             if (this.initialized) {
@@ -16,6 +20,7 @@ export const useUserStore = defineStore("user", {
             try {
                 await axios.get("/sanctum/csrf-cookie");
                 this.initialized = true;
+                await this.checkUser();
             } catch (e) {
                 console.error(e);
             }
@@ -36,11 +41,11 @@ export const useUserStore = defineStore("user", {
             } catch (e) {
                 console.error(e);
             }
-            this.checkUser();
+            await this.checkUser();
         },
         async login(email, password) {
             await axios.post("/login", { email, password });
-            this.checkUser();
+            await this.checkUser();
         },
     },
 });
