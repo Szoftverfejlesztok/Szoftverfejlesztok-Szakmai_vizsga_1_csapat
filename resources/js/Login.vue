@@ -21,8 +21,16 @@ async function login($event) {
 
 <template>
     <form @submit="login">
-        <div style="font-family:'Courier New'; font-size:4vw; color:lightsalmon; font-weight: bold; text-shadow:2px 4px 4px black;"
-            class="grid grid-cols-1 gap-4">
+        <div
+            style="
+                font-family: 'Courier New';
+                font-size: 4vw;
+                color: lightsalmon;
+                font-weight: bold;
+                text-shadow: 2px 4px 4px black;
+            "
+            class="grid grid-cols-1 gap-4"
+        >
             <label class="px-5">Email</label>
             <input type="email" v-model="state.email" />
             <label class="px-5">Password</label>
@@ -30,8 +38,17 @@ async function login($event) {
         </div>
         <button
             class="rounded-full"
-            style="font-family:'Courier New'; font-size:4vw; color:mediumspringgreen; font-weight: bold; text-shadow:2px 4px 4px black;"
-            type="submit">Login</button>
+            style="
+                font-family: 'Courier New';
+                font-size: 4vw;
+                color: mediumspringgreen;
+                font-weight: bold;
+                text-shadow: 2px 4px 4px black;
+            "
+            type="submit"
+        >
+            Login
+        </button>
         <div v-if="state.failed">Failed to log in</div>
     </form>
 </template>
