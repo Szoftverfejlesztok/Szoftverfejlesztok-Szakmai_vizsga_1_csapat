@@ -19,7 +19,9 @@ class Task extends Model
         parent::boot();
         static::creating(function ($model) {
             $user = Auth::user();
-            $model->user_id = $user->id;
+            if ($user) {
+                $model->user_id = $user->id;
+            }
         });
     }
 }
