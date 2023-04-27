@@ -42,26 +42,32 @@ async function onSubmit($event) {
             "
             class="grid grid-cols-1 gap-4"
         >
-            <label class="px-5">Name</label>
+            <label class="px-5" for="name">Name</label>
             <input
+                id="name"
                 type="text"
                 v-model="state.name"
                 class="px-5 mb-5 rounded-full"
             />
-            <label class="px-5">Email</label>
+            <label class="px-5" for="email">Email</label>
             <input
+                id="email"
                 type="email"
                 v-model="state.email"
                 class="px-5 mb-5 rounded-full"
             />
-            <label class="px-5">Password</label>
+            <label class="px-5" for="password">Password</label>
             <input
+                id="password"
                 type="password"
                 v-model="state.password"
                 class="px-5 mb-5 rounded-full"
             />
-            <label class="px-5">Password confirmation</label>
+            <label class="px-5" for="password-confirmation"
+                >Password confirmation</label
+            >
             <input
+                id="password-confirmation"
                 type="password"
                 v-model="state.passwordConfirmation"
                 class="px-5 mb-5 rounded-full"

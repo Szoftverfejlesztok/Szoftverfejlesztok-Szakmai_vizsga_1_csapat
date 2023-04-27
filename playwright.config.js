@@ -31,6 +31,8 @@ module.exports = defineConfig({
         trace: "on-first-retry",
     },
 
+    globalSetup: "./global-setup",
+
     /* Configure projects for major browsers */
     projects: [
         {
