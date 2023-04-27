@@ -17,10 +17,23 @@ async function addTask($event) {
 </script>
 
 <template>
-    <h2>Add Task</h2>
+    <h2
+    style="
+                    font-family: 'Courier New';
+                    font-size: 2vw;
+                    color: darkorange;
+                    font-weight: bold;
+                    text-shadow: 2px 4px 4px black;
+                "    
+    >Add Task</h2>
     <form @submit="addTask">
-        <input v-model="task.name" class="bg-indigo-300 rounded-full w-full" />
-        <button type="submit" class="bg-slate-600 text-white rounded-md px-2">
+        <input v-model="task.name" class="bg-indigo-300 rounded-full w-full mb-2" />
+        <button type="submit" class="bg-fuchsia-400 text-white rounded-md px-2"
+            style="
+            text-shadow: 2px 4px 4px purple;
+            font-size: 1vw;
+            "
+        >
             Add
         </button>
     </form>
