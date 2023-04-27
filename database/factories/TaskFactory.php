@@ -18,7 +18,7 @@ class TaskFactory extends Factory
     {
         return [
             'name' => fake()->sentence(),
-            'user_id' => fake()->numberBetween(1, 2),
+            'user_id' => fake()->randomElement(\App\Models\User::all()->modelKeys()),
             'done' => fake()->boolean(),
         ];
     }
