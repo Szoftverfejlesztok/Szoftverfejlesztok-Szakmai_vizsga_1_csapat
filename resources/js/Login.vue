@@ -29,6 +29,7 @@ async function login($event) {
             <input type="password" v-model="state.password" />
         </div>
         <button
+            class="rounded-full"
             style="font-family:'Courier New'; font-size:4vw; color:mediumspringgreen; font-weight: bold; text-shadow:2px 4px 4px black;"
             type="submit">Login</button>
         <div v-if="state.failed">Failed to log in</div>
