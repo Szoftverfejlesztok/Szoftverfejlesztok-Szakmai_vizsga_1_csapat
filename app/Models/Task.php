@@ -14,6 +14,10 @@ class Task extends Model
         'name',
     ];
 
+    protected $casts = [
+        'done' => 'boolean',
+    ];
+
     public static function boot()
     {
         parent::boot();
