@@ -3,11 +3,23 @@ import { defineStore } from "pinia";
 
 export const useUserStore = defineStore("user", {
     state: () => ({
+        initialized: false,
         loading: true,
         user: null,
     }),
     getters: {},
     actions: {
+        async initialize() {
+            if (this.initialized) {
+                return;
+            }
+            try {
+                await axios.get("/sanctum/csrf-cookie");
+                this.initialized = true;
+            } catch (e) {
+                console.error(e);
+            }
+        },
         async checkUser() {
             try {
                 const { data } = await axios.get("/api/user");
