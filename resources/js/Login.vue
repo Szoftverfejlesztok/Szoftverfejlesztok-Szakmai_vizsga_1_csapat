@@ -65,7 +65,7 @@ async function onSubmit($event) {
         style="
                 font-family: 'Courier New';
                 font-size: 2vw;
-                color: mediumspringgreen;
+                color: lightcoral;
                 font-weight: bold;
                 text-shadow: 2px 4px 4px black;
             "
