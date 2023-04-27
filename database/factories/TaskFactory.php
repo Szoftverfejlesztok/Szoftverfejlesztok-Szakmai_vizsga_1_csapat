@@ -19,6 +19,7 @@ class TaskFactory extends Factory
         return [
             'name' => fake()->sentence(),
             'user_id' => fake()->numberBetween(1, 2),
+            'done' => fake()->boolean(),
         ];
     }
 }
