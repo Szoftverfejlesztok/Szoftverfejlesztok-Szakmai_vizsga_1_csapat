@@ -61,7 +61,15 @@ async function onSubmit($event) {
         >
             Login
         </button>
-        <div v-if="state.failed">Failed to log in</div>
+        <div
+        style="
+                font-family: 'Courier New';
+                font-size: 4vw;
+                color: mediumspringgreen;
+                font-weight: bold;
+                text-shadow: 2px 4px 4px black;
+            "
+         v-if="state.failed">Failed to log in</div>
         <router-link to="/register">Register</router-link>
     </form>
 </template>
