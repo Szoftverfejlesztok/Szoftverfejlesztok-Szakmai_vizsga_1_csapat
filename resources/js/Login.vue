@@ -1,41 +1,36 @@
-<script>
-export default {
-    data() {
-        return {
-            email: "",
-            password: "",
-            failed: false,
-        };
-    },
-    methods: {
-        async login($event) {
-            $event.preventDefault();
-            this.failed = false;
+<script setup>
+import { reactive } from "vue";
+import { useUserStore } from "./stores/user";
 
-            try {
-                const { email, password } = this;
-                await axios.post("/login", { email, password });
-                this.$emit("loggedIn");
-            } catch (e) {
-                this.failed = true;
-            }
-        },
-    },
-};
+const store = useUserStore();
+
+const state = reactive({ email: "", password: "", failed: false });
+
+async function login($event) {
+    $event.preventDefault();
+    state.failed = false;
+
+    try {
+        const { email, password } = state;
+        await store.login(email, password);
+    } catch (e) {
+        state.failed = true;
+    }
+}
 </script>
 
 <template>
     <form @submit="login">
         <div>
             <label>Email</label>
-            <input type="email" v-model="email" />
+            <input type="email" v-model="state.email" />
         </div>
         <div>
             <label>Password</label>
-            <input type="password" v-model="password" />
+            <input type="password" v-model="state.password" />
         </div>
         <button type="submit">Login</button>
-        <div v-if="failed">Failed to log in</div>
+        <div v-if="state.failed">Failed to log in</div>
     </form>
 </template>
 
