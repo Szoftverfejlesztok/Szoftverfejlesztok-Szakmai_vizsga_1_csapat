@@ -2,6 +2,7 @@
 import { onMounted } from "vue";
 import { useUserStore } from "./stores/user";
 import Authentication from "./Authentication.vue";
+import AddTask from "./AddTask.vue";
 import TaskList from "./TaskList.vue";
 
 const store = useUserStore();
@@ -15,6 +16,7 @@ onMounted(() => {
     <h1>To Do App</h1>
     <div v-if="store.initialized">
         <Authentication>
+            <AddTask />
             <TaskList />
         </Authentication>
     </div>

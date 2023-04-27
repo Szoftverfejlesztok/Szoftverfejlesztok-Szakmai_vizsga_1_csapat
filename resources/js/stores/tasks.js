@@ -19,5 +19,13 @@ export const useTaskStore = defineStore("task", {
                 console.error(e);
             }
         },
+        async addTask(task) {
+            try {
+                await tasks.post("/", task);
+                this.updateTasks();
+            } catch (e) {
+                console.error(e);
+            }
+        },
     },
 });
