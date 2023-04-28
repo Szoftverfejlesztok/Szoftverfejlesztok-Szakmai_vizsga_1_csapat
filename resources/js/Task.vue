@@ -34,38 +34,37 @@ const deadline = computed(() => {
 </script>
 
 <template>
-    <div data-testid="task">
-        <label
-            style="
-                font-family: 'Courier New';
-                font-size: 1vw;
-                color: limegreen;
-                font-weight: bolder;
-                text-shadow: 1px 2px 2px black;
-            "
-        >
+    <div
+        data-testid="task"
+        class="flex items-center justify-between bg-slate-300 py-3 px-3 mb-3 rounded"
+    >
+        <label class="m-0 px-0 flex items-center">
             <input
                 type="checkbox"
                 :id="props.task.id"
                 :checked="props.task.done"
                 @input="onCheck"
+                class="mb-0 bg-white h-5 w-5 outline-2 outline-black border-red checked:bg-blue-500 focus:ring-blue-500 focus:ring-2"
             />
-            {{ props.task.name }}
+            <span class="pl-2">
+                {{ props.task.name }}
+            </span>
         </label>
-        <div
-            v-if="deadline"
-            class="bg-slate-600 text-zinc-100 inline-flex justify-center items-center px-2 h-8 rounded"
-        >
-            {{ deadline }}
-        </div>
-        <div
-            type="submit"
-            class="text-white rounded-md px-2 bg-gradient-to-r from-red-800"
-            style="text-shadow: 2px 4px 4px purple; font-size: 1vw"
-            role="button"
-            @click="onDelete"
-        >
-            Delete
+        <div class="flex">
+            <div
+                v-if="deadline"
+                class="mr-4 text-slate-600 inline-flex justify-center items-center text-sm"
+            >
+                {{ deadline }}
+            </div>
+            <div
+                type="submit"
+                class="btn-secondary btn-xs"
+                role="button"
+                @click="onDelete"
+            >
+                Delete
+            </div>
         </div>
     </div>
 </template>
