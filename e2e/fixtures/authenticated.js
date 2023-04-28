@@ -4,13 +4,14 @@ import { TodoAppPage } from "../pom/TodoAppPage";
 export const test = base.extend({
     todoAppPage: [
         async ({ page }, use, testInfo) => {
-            const todoAppPage = new TodoAppPage(page, testInfo.project.name);
+            const todoAppPage = new TodoAppPage(page, testInfo);
             await todoAppPage.goto();
             await todoAppPage.registerNewUser();
 
             await use(todoAppPage);
         },
         {
+            scope: "test",
             auto: true,
         },
     ],

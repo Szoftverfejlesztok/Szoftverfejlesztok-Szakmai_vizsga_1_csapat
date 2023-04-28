@@ -1,11 +1,9 @@
-import { expect } from "@playwright/test";
-
-let id = 0;
+import { expect, test } from "@playwright/test";
 
 export class TodoAppPage {
-    constructor(page, projectName) {
+    constructor(page, testInfo) {
         this.page = page;
-        this.projectName = projectName;
+        this.id = `${testInfo.testId}`;
     }
 
     async goto() {
@@ -15,9 +13,8 @@ export class TodoAppPage {
     async registerNewUser() {
         await this.page.goto("/#/register");
 
-        const email = `test_playwright_${this.projectName}_${id}@example.com`;
-        const name = `Test User ${id}`;
-        id++;
+        const email = `test_playwright_${this.id}@example.com`;
+        const name = `Test User ${this.id}`;
 
         await this.page.getByLabel("Name").fill(name);
         await this.page.getByLabel("Email").fill(email);
@@ -31,6 +28,10 @@ export class TodoAppPage {
         await this.page.getByText("Register").click();
 
         await expect(this.page.getByText(`Hello ${name}`)).toBeVisible();
+    }
+
+    async logout() {
+        await this.page.getByText("Logout").click();
     }
 
     async addTask(name) {
