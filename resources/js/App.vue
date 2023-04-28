@@ -10,8 +10,8 @@ onMounted(() => {
 </script>
 
 <template>
-    <div class="min-h-screen bg-person-stands-hallway bg-center bg-cover">
-        <div class="container">
+    <div class="min-h-screen bg-person-stands-hallway bg-center bg-cover pt-10">
+        <div class="container p-5">
             <h1
                 style="
                     font-family: 'Courier New';

@@ -4,11 +4,15 @@ module.exports = {
     theme: {
         extend: {
             backgroundImage: {
-                'person-stands-hallway': "url('/resources/img/person-stands-hallway.jpg')",
-            }
+                "person-stands-hallway":
+                    "url('/resources/img/person-stands-hallway.jpg')",
+            },
         },
         container: {
             center: true,
+            screens: {
+                sm: "640px",
+            },
         },
     },
     plugins: [],
