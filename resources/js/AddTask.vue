@@ -17,7 +17,7 @@ async function addTask($event) {
 </script>
 
 <template>
-    <form @submit="addTask">
+    <form @submit="addTask" novalidate>
         <label
             style="
                 font-family: 'Courier New';

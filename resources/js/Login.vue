@@ -24,7 +24,7 @@ async function onSubmit($event) {
 </script>
 
 <template>
-    <form @submit="onSubmit">
+    <form @submit="onSubmit" novalidate>
         <div
             style="
                 font-family: 'Verdana';

@@ -90,7 +90,7 @@ test("can not register with mismatching password", async ({
     await expect(page.getByText("Failed to register")).toBeVisible();
 });
 
-test.skip("can not register with wrong email", async ({ page }, testInfo) => {
+test("can not register with wrong email", async ({ page }, testInfo) => {
     await page.getByLabel("Name").fill("Test User");
     await page
         .getByLabel("Email")
