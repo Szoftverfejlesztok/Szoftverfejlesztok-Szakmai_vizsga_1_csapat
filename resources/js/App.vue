@@ -11,8 +11,13 @@ onMounted(() => {
 
 <template>
     <div
+        v-if="userStore.initialized && !userStore.loading"
         class="min-h-screen bg-person-stands-hallway bg-center bg-cover py-10 flex"
     >
-        <router-view v-if="userStore.initialized"></router-view>
+        <router-view v-slot="{ Component }">
+            <transition name="fade" mode="out-in">
+                <component :is="Component" />
+            </transition>
+        </router-view>
     </div>
 </template>

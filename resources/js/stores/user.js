@@ -19,8 +19,8 @@ export const useUserStore = defineStore("user", {
             }
             try {
                 await axios.get("/sanctum/csrf-cookie");
-                this.initialized = true;
                 await this.checkUser();
+                this.initialized = true;
             } catch (e) {
                 console.error(e);
             }

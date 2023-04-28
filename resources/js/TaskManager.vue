@@ -1,27 +1,41 @@
 <script setup>
+import { computed } from "vue";
+import gravatar from "gravatar";
+
 import { useUserStore } from "./stores/user";
 import AddTask from "./AddTask.vue";
 import TaskList from "./TaskList.vue";
 
 const { user, logout } = useUserStore();
+
+const avatar = computed(() => gravatar.url(user.email));
 </script>
 <template>
-    <div
-        style="
-                    font-family: 'Courier New';
-                    font-size: 1.5vw;
-                    color: crimson;
-                    font-weight: bold;
-                    text-shadow: 2px 4px 4px black;
-                "
-        v-if="user">
-        Hello {{ user.name }}
-        <button
-            type="submit"
-            class="bg-fuchsia-400 text-white rounded-md px-2 bg-gradient-to-r from-blue-500"
-            style="text-shadow: 2px 4px 4px purple; font-size: 1vw"
-            @click="logout">Logout</button>
+    <div class="container p-5">
+        <div class="box">
+            <div class="flex justify-between items-center mb-5">
+                <div class="flex justify-between">
+                    <img
+                        :src="avatar"
+                        :alt="user.name"
+                        class="rounded-full w-10 h-10 mr-2"
+                    />
+                    <div class="h-10 flex items-center">
+                        Hello {{ user.name }}!
+                    </div>
+                </div>
+                <div>
+                    <button
+                        type="submit"
+                        class="btn-secondary btn-xs"
+                        @click="logout"
+                    >
+                        Logout
+                    </button>
+                </div>
+            </div>
+            <AddTask />
+            <TaskList />
+        </div>
     </div>
-    <AddTask />
-    <TaskList />
 </template>
