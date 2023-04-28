@@ -1,5 +1,17 @@
 # To Do App
 
+## About
+
+This small app can be used by multiple users to manage their tasks.
+After registration or login the user can add tasks with or without deadline. The tasks are sorted by the deadline and grouped into upcoming and completed tasks. The user can change the task state by clicking the checkbox. If a task is not necessary anymore it can be deleted with the delete button.
+The user has a simple profile with a name given during the registration and an avatar imported from Gravatar by the user's email address.
+
+## Screenshots
+
+![Registration](screenshots/register.png)
+![Login](screenshots/login.png)
+![App](screenshots/app.png)
+
 ## Requirements
 
 -   PHP >8.2.0
