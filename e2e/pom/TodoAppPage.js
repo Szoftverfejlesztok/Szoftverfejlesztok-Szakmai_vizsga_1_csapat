@@ -34,15 +34,22 @@ export class TodoAppPage {
         await this.page.getByText("Logout").click();
     }
 
-    async addTask(name) {
+    async addTask(name, deadline) {
         await this.page.getByLabel("Add task").fill(name);
+
+        if (deadline) {
+            await this.page.getByLabel("Datepicker input").click();
+            await this.page.locator(`data-test=${new Date(deadline)}`).click();
+            await this.page.getByText("Select").click();
+        }
+
         await this.page.getByText("Add", { exact: true }).click();
         await expect(this.page.getByLabel("Add task")).toBeEmpty();
         await expect(this.page.getByText(name)).toBeVisible();
     }
 
     getTask(name) {
-        return this.page.locator("div", {
+        return this.page.getByTestId("task", {
             has: this.page.getByText(name, { exact: true }),
         });
     }

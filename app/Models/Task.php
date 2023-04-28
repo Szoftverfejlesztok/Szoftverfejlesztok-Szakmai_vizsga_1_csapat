@@ -13,10 +13,12 @@ class Task extends Model
     protected $fillable = [
         'name',
         'done',
+        'deadline',
     ];
 
     protected $casts = [
         'done' => 'boolean',
+        'deadline' => 'datetime',
     ];
 
     public static function boot()

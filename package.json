@@ -16,6 +16,7 @@
         "vite": "^4.0.0"
     },
     "dependencies": {
+        "@vuepic/vue-datepicker": "^4.5.1",
         "pinia": "^2.0.35",
         "vue-router": "^4.1.6"
     }

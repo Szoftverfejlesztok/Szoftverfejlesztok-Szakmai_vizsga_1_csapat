@@ -1,8 +1,10 @@
 <script setup>
-import { reactive } from "vue";
+import { reactive, ref } from "vue";
+import VueDatePicker from "@vuepic/vue-datepicker";
+import "@vuepic/vue-datepicker/dist/main.css";
 import { useTaskStore } from "./stores/tasks";
 
-const task = reactive({ name: "" });
+const task = reactive({ name: "", deadline: null });
 const store = useTaskStore();
 
 async function addTask($event) {
@@ -10,10 +12,13 @@ async function addTask($event) {
     try {
         await store.addTask(task);
         task.name = "";
+        task.deadline = null;
     } catch (e) {
         console.error(e);
     }
 }
+
+const startTime = ref({ hours: 0, minutes: 0 });
 </script>
 
 <template>
@@ -32,6 +37,15 @@ async function addTask($event) {
                 class="bg-indigo-100 rounded-full w-full mb-2 px-2"
             />
         </label>
+        <div>
+            <VueDatePicker
+                v-model="task.deadline"
+                :enable-time-picker="false"
+                :start-time="startTime"
+                utc="preserve"
+            ></VueDatePicker>
+            <div>{{ task.deadline }}</div>
+        </div>
         <button
             type="submit"
             class="bg-fuchsia-400 text-white rounded-md px-2 bg-gradient-to-r from-blue-500"
