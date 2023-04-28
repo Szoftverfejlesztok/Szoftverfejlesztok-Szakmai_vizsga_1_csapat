@@ -5,11 +5,34 @@ const tasks = axios.create({
     baseURL: "/api/tasks",
 });
 
+function compareByDeadline(a, b) {
+    if (a.deadline === null) {
+        return 1;
+    }
+
+    if (b.deadline === null) {
+        return -1;
+    }
+
+    return new Date(a.deadline).getTime() - new Date(b.deadline).getTime();
+}
+
 export const useTaskStore = defineStore("task", {
     state: () => ({
         tasks: null,
     }),
-    getters: {},
+    getters: {
+        unfinishedTasks() {
+            return this.tasks
+                ?.filter((task) => !task.done)
+                ?.sort(compareByDeadline);
+        },
+        finishedTasks() {
+            return this.tasks
+                ?.filter((task) => task.done)
+                ?.sort(compareByDeadline);
+        },
+    },
     actions: {
         async getTasks() {
             try {
