@@ -9,6 +9,10 @@ const store = useTaskStore();
 
 async function addTask($event) {
     $event.preventDefault();
+    if (!task.name) {
+        return;
+    }
+
     try {
         await store.addTask(task);
         task.name = "";
@@ -30,7 +34,7 @@ const startTime = ref({ hours: 0, minutes: 0 });
                 color: darkorange;
                 font-weight: bold;
                 text-shadow: 2px 4px 4px black;
-                "
+            "
             >Add Task
             <input
                 v-model="task.name"
@@ -47,8 +51,9 @@ const startTime = ref({ hours: 0, minutes: 0 });
             <div>{{ task.deadline }}</div>
         </div>
         <button
+            :disabled="!task.name"
             type="submit"
-            class="bg-fuchsia-400 text-white rounded-md px-2 bg-gradient-to-r from-blue-500"
+            class="bg-fuchsia-400 disabled:bg-slate-50 text-white rounded-md px-2 bg-gradient-to-r from-blue-500"
             style="text-shadow: 2px 4px 4px purple; font-size: 1vw"
         >
             Add

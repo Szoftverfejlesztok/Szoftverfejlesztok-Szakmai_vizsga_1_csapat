@@ -1,6 +1,6 @@
 import { test, expect } from "./fixtures/authenticated";
 
-task.descibe("TS_03 - New task", () => {
+test.describe("TS_03 - New task", () => {
     test("TS_01 - can add task without deadline", async ({
         todoAppPage,
         page,
@@ -34,5 +34,14 @@ task.descibe("TS_03 - New task", () => {
                 .getTask("My new task that I will do")
                 .getByText("04/28/2023")
         ).toBeVisible();
+    });
+
+    test("TS_03 - can not add empty task", async ({ page }) => {
+        await page.getByLabel("Add task").fill("");
+
+        await expect(page.getByText("Add", { exact: true })).toBeDisabled();
+        await page.getByText("Add", { exact: true }).click({ force: true });
+        await expect(page.getByLabel("Add task")).toBeEmpty();
+        await expect(page.getByTestId("task")).toHaveCount(0);
     });
 });
