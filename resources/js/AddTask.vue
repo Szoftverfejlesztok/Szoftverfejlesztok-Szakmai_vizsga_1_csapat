@@ -34,7 +34,7 @@ async function addTask($event) {
         </label>
         <button
             type="submit"
-            class="bg-fuchsia-400 text-white rounded-md px-2"
+            class="bg-fuchsia-400 text-white rounded-md px-2 bg-gradient-to-r from-blue-500"
             style="text-shadow: 2px 4px 4px purple; font-size: 1vw"
         >
             Add
