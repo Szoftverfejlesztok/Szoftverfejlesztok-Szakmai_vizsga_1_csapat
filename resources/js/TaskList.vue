@@ -10,7 +10,15 @@ onMounted(() => {
 </script>
 
 <template>
-    <h2>Task List</h2>
+    <h2
+        style="
+                font-family: 'Courier New';
+                font-size: 2vw;
+                color: mediumturquoise;
+                font-weight: bold;
+                text-shadow: 2px 4px 4px black;
+            "
+        >Task List</h2>
     <div v-for="task in store.tasks">
         <Task :task="task" />
     </div>
