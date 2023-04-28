@@ -45,7 +45,6 @@ const startTime = ref({ hours: 0, minutes: 0 });
                 :start-time="startTime"
                 utc="preserve"
             ></VueDatePicker>
-            <div>{{ task.deadline }}</div>
         </div>
         <button
             :disabled="!task.name"
