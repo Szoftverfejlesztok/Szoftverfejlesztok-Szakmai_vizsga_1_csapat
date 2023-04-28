@@ -21,7 +21,7 @@ input {
 
 .btn-primary {
     @apply btn;
-    @apply bg-amber-400 hover:bg-amber-300 focus:bg-amber-300 text-slate-700;
+    @apply bg-amber-400 disabled:bg-amber-500 disabled:opacity-50 hover:bg-amber-300 focus:bg-amber-300 text-slate-700;
 }
 
 .btn-secondary {
