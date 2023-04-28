@@ -43,26 +43,11 @@ async function onSubmit($event) {
             class="grid grid-cols-1 gap-4"
         >
             <label class="px-5" for="name">Name</label>
-            <input
-                id="name"
-                type="text"
-                v-model="state.name"
-                class="px-5 mb-5 rounded-full"
-            />
+            <input id="name" type="text" v-model="state.name" />
             <label class="px-5" for="email">Email</label>
-            <input
-                id="email"
-                type="email"
-                v-model="state.email"
-                class="px-5 mb-5 rounded-full"
-            />
+            <input id="email" type="email" v-model="state.email" />
             <label class="px-5" for="password">Password</label>
-            <input
-                id="password"
-                type="password"
-                v-model="state.password"
-                class="px-5 mb-5 rounded-full"
-            />
+            <input id="password" type="password" v-model="state.password" />
             <label class="px-5" for="password-confirmation"
                 >Password confirmation</label
             >
@@ -70,7 +55,6 @@ async function onSubmit($event) {
                 id="password-confirmation"
                 type="password"
                 v-model="state.passwordConfirmation"
-                class="px-5 mb-5 rounded-full"
             />
         </div>
         <button
@@ -88,15 +72,17 @@ async function onSubmit($event) {
         </button>
         <router-link
             class="rounded-full bg-fuchsia-800 px-10 float-right"
-                style="
+            style="
                 font-family: 'Courier New';
                 font-size: 2vw;
                 color: mediumspringgreen;
                 font-weight: bold;
                 text-shadow: 2px 4px 4px black;
             "
-                type="submit"
-         to="/login">Login</router-link>
+            type="submit"
+            to="/login"
+            >Login</router-link
+        >
         <div
             style="
                 font-family: 'Courier New';
@@ -105,6 +91,9 @@ async function onSubmit($event) {
                 font-weight: bold;
                 text-shadow: 2px 4px 4px black;
             "
-            v-if="state.failed">Failed to register</div>
+            v-if="state.failed"
+        >
+            Failed to register
+        </div>
     </form>
 </template>

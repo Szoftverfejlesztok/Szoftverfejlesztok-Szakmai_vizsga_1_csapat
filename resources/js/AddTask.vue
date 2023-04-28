@@ -36,10 +36,7 @@ const startTime = ref({ hours: 0, minutes: 0 });
                 text-shadow: 2px 4px 4px black;
             "
             >Add Task
-            <input
-                v-model="task.name"
-                class="bg-indigo-100 rounded-full w-full mb-2 px-2"
-            />
+            <input v-model="task.name" />
         </label>
         <div>
             <VueDatePicker
