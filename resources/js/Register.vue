@@ -32,7 +32,7 @@ async function onSubmit($event) {
 
 <template>
     <div class="container p-5 flex items-center">
-        <div class="box">
+        <div class="box pt-10">
             <form @submit="onSubmit" novalidate>
                 <div class="flex flex-col">
                     <label for="name">Name</label>

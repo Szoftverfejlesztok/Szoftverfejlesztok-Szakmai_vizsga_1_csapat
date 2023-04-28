@@ -25,7 +25,7 @@ async function onSubmit($event) {
 
 <template>
     <div class="container p-5 flex items-center">
-        <div class="box">
+        <div class="box pt-10">
             <form @submit="onSubmit" novalidate>
                 <div class="flex flex-col mb-5">
                     <label for="email">Email</label>
@@ -42,9 +42,10 @@ async function onSubmit($event) {
                         Login
                     </button>
 
-                    <button class="btn-secondary mb-5" type="submit">
-                        <router-link to="/register">Register</router-link>
-                    </button>
+                    <router-link to="/register" class="btn-secondary mb-5"
+                        >Register</router-link
+                    >
+
                     <div
                         class="transition-all text-red-500 text-center"
                         :class="
