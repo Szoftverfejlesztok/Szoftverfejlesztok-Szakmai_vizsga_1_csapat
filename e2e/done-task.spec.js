@@ -6,7 +6,7 @@ test.beforeEach(async ({ todoAppPage }) => {
     await todoAppPage.markTaskAsDone("My new task that I won't do");
 });
 
-test("can mark task as done", async ({ todoAppPage, page }) => {
+test("can mark task as done", async ({ todoAppPage }) => {
     await todoAppPage.markTaskAsDone("My new task that I do");
 
     await expect(
@@ -14,7 +14,7 @@ test("can mark task as done", async ({ todoAppPage, page }) => {
     ).toBeChecked();
 });
 
-test("can mark task as undone", async ({ todoAppPage, page }) => {
+test("can mark task as undone", async ({ todoAppPage }) => {
     await todoAppPage.markTaskAsUndone("My new task that I won't do");
 
     await expect(
