@@ -24,38 +24,39 @@ async function onSubmit($event) {
 </script>
 
 <template>
-    <form @submit="onSubmit" novalidate>
-        <div
-            style="
-                font-family: 'Verdana';
-                font-size: 2vw;
-                color: lightsalmon;
-                font-weight: bold;
-                text-shadow: 2px 4px 4px black;
-            "
-            class="grid grid-cols-1 gap-4"
-        >
-            <label class="px-5" for="email">Email</label>
-            <input id="email" type="email" v-model="state.email" />
-            <label class="px-5" for="password">Password</label>
-            <input id="password" type="password" v-model="state.password" />
-        </div>
-        <button class="btn-primary" type="submit">Login</button>
+    <div class="container p-5 flex items-center">
+        <div class="box">
+            <form @submit="onSubmit" novalidate>
+                <div class="flex flex-col mb-5">
+                    <label for="email">Email</label>
+                    <input id="email" type="email" v-model="state.email" />
+                    <label for="password">Password</label>
+                    <input
+                        id="password"
+                        type="password"
+                        v-model="state.password"
+                    />
+                </div>
+                <div class="flex flex-col">
+                    <button class="btn-primary mb-5" type="submit">
+                        Login
+                    </button>
 
-        <button class="btn-primary float-right" type="submit">
-            <router-link to="/register">Register</router-link>
-        </button>
-        <div
-            style="
-                font-family: 'Courier New';
-                font-size: 3vw;
-                color: crimson;
-                font-weight: bold;
-                text-shadow: 2px 4px 4px black;
-            "
-            v-if="state.failed"
-        >
-            Failed to log in
+                    <button class="btn-secondary mb-5" type="submit">
+                        <router-link to="/register">Register</router-link>
+                    </button>
+                    <div
+                        class="transition-all text-red-500 text-center"
+                        :class="
+                            state.failed
+                                ? ['']
+                                : ['opacity-0', 'scale-50', 'invisible']
+                        "
+                    >
+                        Failed to log in
+                    </div>
+                </div>
+            </form>
         </div>
-    </form>
+    </div>
 </template>
