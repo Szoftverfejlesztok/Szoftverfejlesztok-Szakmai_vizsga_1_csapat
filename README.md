@@ -24,3 +24,7 @@
 -   Start the frontend in another terminal: `npm run dev`
 -   Open the site in the browser: `http://localhost:8000`
 -   You can login with the email `test@example.com` and password `password`
+
+## Entity-relationship diagram
+
+![Entity-relationship diagram](erd.png)
