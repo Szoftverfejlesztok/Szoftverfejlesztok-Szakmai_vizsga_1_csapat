@@ -40,4 +40,32 @@ export class TodoAppPage {
         await expect(this.page.getByLabel("Add task")).toBeEmpty();
         await expect(this.page.getByText(name)).toBeVisible();
     }
+
+    getTask(name) {
+        return this.page.locator("div", {
+            has: this.page.getByText(name, { exact: true }),
+        });
+    }
+
+    getTaskCheckbox(name) {
+        return this.page.getByLabel(name);
+    }
+
+    async markTaskAsDone(name) {
+        const checkbox = this.getTaskCheckbox(name);
+        await expect(checkbox).not.toBeChecked();
+
+        await checkbox.click();
+
+        await expect(checkbox).toBeChecked();
+    }
+
+    async markTaskAsUndone(name) {
+        const checkbox = this.getTaskCheckbox(name);
+        await expect(checkbox).toBeChecked();
+
+        await checkbox.click();
+
+        await expect(checkbox).not.toBeChecked();
+    }
 }
