@@ -46,3 +46,5 @@ The user has a simple profile with a name given during the registration and an a
 You can read the test documentation here: [Teszt dokumentáció.pdf](Teszt%20dokumentáció.pdf)
 
 All of the tests have been implemented with Playwright, you can run them with the following command: `npm test`
+
+You can view the report of the latest test run: [Test report](playwright-report.html)
