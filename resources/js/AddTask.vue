@@ -27,32 +27,25 @@ const startTime = ref({ hours: 0, minutes: 0 });
 
 <template>
     <form @submit="addTask" novalidate>
-        <label
-            style="
-                font-family: 'Courier New';
-                font-size: 2vw;
-                color: darkorange;
-                font-weight: bold;
-                text-shadow: 2px 4px 4px black;
-            "
-            >Add Task
-            <input v-model="task.name" />
-        </label>
-        <div>
-            <VueDatePicker
-                v-model="task.deadline"
-                :enable-time-picker="false"
-                :start-time="startTime"
-                utc="preserve"
-            ></VueDatePicker>
+        <div class="flex flex-col">
+            <div class="flex mb-5">
+                <input v-model="task.name" class="mb-0 mr-5 flex-grow" />
+                <button
+                    :disabled="!task.name"
+                    type="submit"
+                    class="btn-primary"
+                >
+                    Add new task
+                </button>
+            </div>
+            <div>
+                <VueDatePicker
+                    v-model="task.deadline"
+                    :enable-time-picker="false"
+                    :start-time="startTime"
+                    utc="preserve"
+                ></VueDatePicker>
+            </div>
         </div>
-        <button
-            :disabled="!task.name"
-            type="submit"
-            class="bg-fuchsia-400 disabled:bg-slate-50 text-white rounded-md px-2 bg-gradient-to-r from-blue-500"
-            style="text-shadow: 2px 4px 4px purple; font-size: 1vw"
-        >
-            Add
-        </button>
     </form>
 </template>
