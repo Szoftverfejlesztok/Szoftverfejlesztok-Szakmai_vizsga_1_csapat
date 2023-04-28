@@ -25,7 +25,7 @@ export class TodoAppPage {
             .getByLabel("Password confirmation", { exact: true })
             .fill("password");
 
-        await this.page.getByText("Register").click();
+        await this.page.getByText("Register", { exact: true }).click();
 
         await expect(this.page.getByText(`Hello ${name}`)).toBeVisible();
     }
@@ -35,7 +35,7 @@ export class TodoAppPage {
     }
 
     async addTask(name, deadline) {
-        await this.page.getByLabel("Add task").fill(name);
+        await this.page.getByPlaceholder("Name of the task").fill(name);
 
         if (deadline) {
             await this.page.getByLabel("Datepicker input").click();
@@ -43,8 +43,10 @@ export class TodoAppPage {
             await this.page.getByText("Select").click();
         }
 
-        await this.page.getByText("Add", { exact: true }).click();
-        await expect(this.page.getByLabel("Add task")).toBeEmpty();
+        await this.page.getByText("Add new task", { exact: true }).click();
+        await expect(
+            this.page.getByPlaceholder("Name of the task")
+        ).toBeEmpty();
         await expect(this.page.getByText(name)).toBeVisible();
     }
 

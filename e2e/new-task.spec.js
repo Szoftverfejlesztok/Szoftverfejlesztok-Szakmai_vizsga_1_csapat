@@ -37,11 +37,15 @@ test.describe("TS_03 - New task", () => {
     });
 
     test("TS_03 - can not add empty task", async ({ page }) => {
-        await page.getByLabel("Add task").fill("");
+        await page.getByPlaceholder("Name of the task").fill("");
 
-        await expect(page.getByText("Add", { exact: true })).toBeDisabled();
-        await page.getByText("Add", { exact: true }).click({ force: true });
-        await expect(page.getByLabel("Add task")).toBeEmpty();
+        await expect(
+            page.getByText("Add new task", { exact: true })
+        ).toBeDisabled();
+        await page
+            .getByText("Add new task", { exact: true })
+            .click({ force: true });
+        await expect(page.getByPlaceholder("Name of the task")).toBeEmpty();
         await expect(page.getByTestId("task")).toHaveCount(0);
     });
 });

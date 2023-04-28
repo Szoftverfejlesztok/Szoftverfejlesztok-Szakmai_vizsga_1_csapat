@@ -16,7 +16,7 @@ test.describe("TS_01 - Registration", () => {
             .getByLabel("Password confirmation", { exact: true })
             .fill("password");
 
-        await page.getByText("Register").click();
+        await page.getByText("Register", { exact: true }).click();
 
         await expect(page.getByText("Hello Test User")).toBeVisible();
     });
@@ -32,7 +32,7 @@ test.describe("TS_01 - Registration", () => {
             .getByLabel("Password confirmation", { exact: true })
             .fill("password");
 
-        await page.getByText("Register").click();
+        await page.getByText("Register", { exact: true }).click();
 
         await expect(page.getByText("Failed to register")).toBeVisible();
     });
@@ -44,7 +44,7 @@ test.describe("TS_01 - Registration", () => {
             .getByLabel("Password confirmation", { exact: true })
             .fill("password");
 
-        await page.getByText("Register").click();
+        await page.getByText("Register", { exact: true }).click();
 
         await expect(page.getByText("Failed to register")).toBeVisible();
     });
@@ -60,7 +60,7 @@ test.describe("TS_01 - Registration", () => {
             .getByLabel("Password confirmation", { exact: true })
             .fill("password");
 
-        await page.getByText("Register").click();
+        await page.getByText("Register", { exact: true }).click();
 
         await expect(page.getByText("Failed to register")).toBeVisible();
     });
@@ -77,7 +77,7 @@ test.describe("TS_01 - Registration", () => {
             .getByLabel("Password confirmation", { exact: true })
             .fill("password");
 
-        await page.getByText("Register").click();
+        await page.getByText("Register", { exact: true }).click();
 
         await expect(page.getByText("Failed to register")).toBeVisible();
     });
@@ -94,7 +94,7 @@ test.describe("TS_01 - Registration", () => {
             .getByLabel("Password confirmation", { exact: true })
             .fill("p");
 
-        await page.getByText("Register").click();
+        await page.getByText("Register", { exact: true }).click();
 
         await expect(page.getByText("Failed to register")).toBeVisible();
     });
@@ -111,7 +111,7 @@ test.describe("TS_01 - Registration", () => {
             .getByLabel("Password confirmation", { exact: true })
             .fill("otherpassword");
 
-        await page.getByText("Register").click();
+        await page.getByText("Register", { exact: true }).click();
 
         await expect(page.getByText("Failed to register")).toBeVisible();
     });
@@ -124,7 +124,7 @@ test.describe("TS_01 - Registration", () => {
             .getByLabel("Password confirmation", { exact: true })
             .fill("password");
 
-        await page.getByText("Register").click();
+        await page.getByText("Register", { exact: true }).click();
 
         await expect(page.getByText("Failed to register")).toBeVisible();
     });

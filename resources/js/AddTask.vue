@@ -29,7 +29,11 @@ const startTime = ref({ hours: 0, minutes: 0 });
     <form @submit="addTask" novalidate>
         <div class="flex flex-col">
             <div class="flex flex-col sm:flex-row mb-5">
-                <input v-model="task.name" class="sm:mb-0 sm:mr-5 flex-grow" />
+                <input
+                    v-model="task.name"
+                    placeholder="Name of the task"
+                    class="sm:mb-0 sm:mr-5 flex-grow"
+                />
                 <button
                     :disabled="!task.name"
                     type="submit"
