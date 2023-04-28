@@ -28,3 +28,9 @@
 ## Entity-relationship diagram
 
 ![Entity-relationship diagram](erd.png)
+
+## Testing
+
+You can read the test documentation here: [Teszt dokumentáció.pdf](Teszt dokumentáció.pdf)
+
+All of the tests have been implemented with Playwright, you can run them with the following command: `npm test`
