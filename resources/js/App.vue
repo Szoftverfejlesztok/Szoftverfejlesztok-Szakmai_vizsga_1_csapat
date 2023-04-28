@@ -10,7 +10,7 @@ onMounted(() => {
 </script>
 
 <template>
-    <div class="h-screen bg-person-stands-hallway bg-center bg-cover">
+    <div class="min-h-screen bg-person-stands-hallway bg-center bg-cover">
         <div class="container">
             <h1
                 style="
