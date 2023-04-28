@@ -41,5 +41,13 @@ export const useTaskStore = defineStore("task", {
                 console.error(e);
             }
         },
+        async deleteTask(id) {
+            try {
+                await tasks.delete(`/${id}`);
+                this.getTasks();
+            } catch (e) {
+                console.error(e);
+            }
+        },
     },
 });
