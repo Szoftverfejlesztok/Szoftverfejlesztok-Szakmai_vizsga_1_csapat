@@ -25,7 +25,7 @@ async function addTask($event) {
                 color: darkorange;
                 font-weight: bold;
                 text-shadow: 2px 4px 4px black;
-            "
+                "
             >Add Task
             <input
                 v-model="task.name"
