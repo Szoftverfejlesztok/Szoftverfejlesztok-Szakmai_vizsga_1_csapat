@@ -4,7 +4,7 @@
 
 @layer components {
     input {
-        @apply py-2 px-4 bg-white text-black font-semibold rounded-lg focus:outline-none;
+        @apply py-2 px-4 mb-5 bg-white text-black font-semibold rounded-lg focus:outline-none;
     }
 
     .btn-primary {
